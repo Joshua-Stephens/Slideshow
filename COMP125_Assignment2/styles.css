@@ -1,0 +1,142 @@
+/* ---------------------------------------------------------*/
+/* Styles for the overlay displaying an image in fullscreen */
+/* ---------------------------------------------------------*/
+
+/* Styles for the overlay */
+div#lbOverlay {
+    position: fixed;
+    /* Overlay is fixed on screen */
+    z-index: 1;
+    /* Overlay sits on top of other content */
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    top: 0;
+    left: 0;
+    background-color: rgba(104, 49, 0, 0.85);
+    /* Semitransparent brown background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Styles for the figure box within the overlay */
+div#lbOverlay figure {
+    display: block;
+    width: 80%;
+    max-width: 800px;
+}
+
+/* Styles for the image within the overlay */
+div#lbOverlay figure img {
+    display: block;
+    margin: auto;
+    width: 100%;
+    height: auto;
+    box-shadow: 5px 5px 20px black;
+    animation-name: zoom;
+    /* animate the opening of the figure */
+    animation-duration: 1s;
+    /* over a 1-second interval */
+}
+
+/* Styles for the caption within the overlay */
+div#lbOverlay figure figcaption,
+button {
+    text-align: center;
+    font-size: 1.25em;
+    color: white;
+    margin-top: 10px;
+    animation-name: zoom;
+    /* animate the opening of the figure */
+    animation-duration: 1s;
+    /* over a 1-second interval */
+}
+
+/* Styles for the overlay close button */
+div#lbOverlay div#lbOverlayClose {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: #f1f1f1;
+    font-size: 40px;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Hovering styles for the modal window close button */
+div#lbOverlay div#lbOverlayClose:hover {
+    color: #F7F1A9;
+    text-shadow: 3px 3px 0px black;
+}
+
+/* Keyframe animation for the opening of the modal window figure and caption */
+@keyframes zoom {
+    from {
+        transform: scale(0)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
+
+* {
+    background-color: black;
+    color: white;
+}
+
+#favourites {
+    margin-top: 150px;
+}
+
+#faveImages {
+    display: flex;
+}
+
+div#faveImages img {
+    display: block;
+    width: 115px;
+    height: auto;
+    margin-right: 13px;
+    filter: opacity(0.8);
+    cursor: pointer;
+    outline: 2px solid #9C6908;
+    box-shadow: 3px 3px 10px black;
+    user-select: none;
+}
+
+div#faveImages img:hover {
+    filter: opacity(1);
+}
+
+#saveButtonDiv {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    border: 2px solid green;
+    border-radius: 150px;
+    padding: 11px;
+    margin-bottom: 10px;
+    font-size: small;
+    color: green;
+}
+
+button:hover {
+    border: 2px solid greenyellow;
+    color: greenyellow;
+}
+
+#removeButton {
+    border: 2px solid darkred;
+    color: darkred;
+}
+
+#removeButton:hover {
+    border: 2px solid red;
+    color: red;
+}
